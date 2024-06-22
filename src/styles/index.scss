@@ -1,0 +1,25 @@
+@import './_reset.scss';
+@import './variables/global.scss';
+@import './themes/dark.scss';
+@import './themes/normal.scss';
+
+.app {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  font: var(--font-m);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+button {
+  color: var(--secondary-color);
+  border-radius: 6px;
+  background-color: var(--bg-btn-color);
+  padding: 6px 8px;
+  border: none;
+  cursor: pointer;
+}
