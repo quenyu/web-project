@@ -1,9 +1,10 @@
 export type BuildMode = "production" | "development"
 
-export type BuildPath = {
+export type BuildPaths = {
   entry: string,
   build: string,
   html: string,
+  src: string,
 }
 
 export type BuildEnv = {
@@ -13,7 +14,7 @@ export type BuildEnv = {
 
 export type BuildOptions = {
   mode: BuildMode,
-  paths: BuildPath,
+  paths: BuildPaths,
   isDev: boolean,
   port: number,
 }
