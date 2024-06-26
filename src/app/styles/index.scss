@@ -15,6 +15,15 @@
   min-height: 100vh;
 }
 
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex: 1;
+  padding: 20px;
+}
+
 button {
   color: var(--secondary-color);
   border-radius: 6px;
