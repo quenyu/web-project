@@ -1,0 +1,29 @@
+.PageError {
+  font: var(--font-l);
+  background-color: #09090b;
+  height: 100vh;
+  color: #ffffff;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.PageError__title {
+  font-size: 32px;
+}
+
+.PageError__button {
+  height: 2.5rem;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #27272a;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.PageError__button:hover {
+  background-color: #27272a;
+  color: #fafafa;
+}
