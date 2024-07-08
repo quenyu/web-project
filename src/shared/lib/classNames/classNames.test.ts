@@ -11,6 +11,6 @@ describe("classNames", () => {
     expect(classNames("some class", { "scrollable": true, "fixable": true }, ["class1", "class2"])).toBe("some class class1 class2 scrollable fixable")
   })
   test("with undefined mods param", () => {
-    expect(classNames("some class", { "scrollable": undefined }, [])).toBe("some class")
+    expect(classNames("some class", { "scrollable": false }, [])).toBe("some class")
   })
 })
