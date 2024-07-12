@@ -4,22 +4,22 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/route';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 
 const App = () => {
-  const { theme } = useTheme();
+	const { theme } = useTheme();
 
-  return (
-    <div className={classNames("app", {}, [theme])}>
-      <Navbar />
-      <Suspense fallback="">
-        <div className="content-page">
-          <Sidebar />
-          <AppRouter />
-        </div>
-      </Suspense>
-    </div>
-  )
-}
+	return (
+		<div className={classNames('app', {}, [theme])}>
+			<Navbar />
+			<Suspense fallback="">
+				<div className="content-page">
+					<Sidebar />
+					<AppRouter />
+				</div>
+			</Suspense>
+		</div>
+	);
+};
 
-export default App
+export default App;

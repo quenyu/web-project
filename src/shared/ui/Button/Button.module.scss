@@ -1,4 +1,9 @@
 .Button {
+  color: var(--secondary-color);
+  border-radius: 6px;
+  background-color: var(--bg-btn-color);
+  padding: 6px 8px;
+  border: none;
   cursor: pointer;
 }
 
@@ -7,4 +12,11 @@
   border: none;
   outline: none;
   background: none;
+}
+
+.outline {
+  padding: 10px 15px;
+  background: none;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }

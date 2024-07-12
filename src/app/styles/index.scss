@@ -1,7 +1,7 @@
-@import "./reset";
-@import "./variables/global";
-@import "./themes/dark";
-@import "./themes/normal";
+@import "reset";
+@import "variables/global";
+@import "themes/dark";
+@import "themes/normal";
 
 .app {
   background-color: var(--bg-color);
@@ -17,13 +17,4 @@
 .page-wrapper {
   flex: 1;
   padding: 20px;
-}
-
-button {
-  color: var(--secondary-color);
-  border-radius: 6px;
-  background-color: var(--bg-btn-color);
-  padding: 6px 8px;
-  border: none;
-  cursor: pointer;
 }
