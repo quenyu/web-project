@@ -15,7 +15,7 @@ export default {
 	},
 } as ComponentMeta<typeof Main>;
 
-const Template: ComponentStory<typeof Main> = (args) => <Main {...args} />;
+const Template: ComponentStory<typeof Main> = (args) => <Main {...args as typeof Main} />;
 
 export const Light = Template.bind({});
 Light.args = {};
