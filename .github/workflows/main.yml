@@ -1,0 +1,52 @@
+name: building, testing, linting 🍏
+run-name: ${{ github.actor }} is testing out
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 20.x
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Checkout
+        uses: actions/setup-node@v1
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build production project
+        run: npm run build:prod
+
+      - name: Run linting typescript
+        run: npm run lint:ts
+
+      - name: Run linting scss
+        run: npm run lint:scss
+
+      - name: Run unit testing
+        run: npm run test:unit
+        
+      # - uses: actions/checkout@v2
+      # - name: Starting node.js ${{ matrix.node-version }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      # node-version: ${{ matrix.node-version }}
+
+
+
