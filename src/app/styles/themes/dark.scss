@@ -1,6 +1,8 @@
 .app.dark {
-  --bg-color: #09090b;
+  --bg-color: #222;
+  --bg-color-secondary: #383838;
   --bg-btn-color: #3535352f;
   --primary-color: #fff;
-  --secondary-color: #ffffffb2;
+  --default-color: rgba(#fff, 0.9);
+  --secondary-color: rgba(#fff, 0.5);
 }

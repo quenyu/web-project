@@ -1,23 +1,27 @@
-import { Themes, useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import DarkThemeIcon from 'shared/assets/icons/theme-dark.svg';
-import LightThemeIcon from 'shared/assets/icons/theme-light.svg';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import styles from './ThemeSwitcher.module.scss';
 
 type ThemeSwitcherProps = {
-  className?: string,
+	className?: string,
 }
 
 export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
-	const { theme, toggleTheme } = useTheme();
+	const { toggleTheme } = useTheme();
 
 	return (
-		<Button
-			className={classNames('', {}, [className])}
+		<input
+			className={classNames(styles.ThemeToggle, {}, [className])}
 			onClick={toggleTheme}
-			theme={ThemeButton.CLEAR}
-		>
-			{theme === Themes.DARK ? <DarkThemeIcon width={30} height={30} /> : <LightThemeIcon width={30} height={30} />}
-		</Button>
+			type="checkbox"
+			defaultChecked
+		/>
+		// <Button
+		// 	className={classNames('', {}, [className])}
+		// 	onClick={toggleTheme}
+		// 	theme={ButtonTheme.CLEAR}
+		// >
+		// {/* </Button> */}
+		// {/* {theme === Themes.DARK ? <DarkThemeIcon className={styles.darkIcon} width={30} height={30} /> : <LightThemeIcon width={30} height={30} />} */}
 	);
 };

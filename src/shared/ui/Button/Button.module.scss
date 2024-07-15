@@ -2,7 +2,7 @@
   color: var(--secondary-color);
   border-radius: 6px;
   background-color: var(--bg-btn-color);
-  padding: 6px 8px;
+  padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
@@ -15,8 +15,53 @@
 }
 
 .outline {
-  padding: 10px 15px;
   background: none;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
+}
+
+.background {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundInverted {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.size_m {
+  height: var(--font-line-m);
+  width: var(--font-line-m);
+  font: var(--font-m);
+}
+
+.square.size_l {
+  height: var(--font-line-l);
+  width: var(--font-line-l);
+  font: var(--font-l);
+}
+
+.square.size_xl {
+  height: var(--font-line-xl);
+  width: var(--font-line-xl);
+  font: var(--font-xl);
+}
+
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
 }

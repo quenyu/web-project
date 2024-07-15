@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
-import cls from './Sidebar.module.scss';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
 	className?: string;
@@ -21,17 +21,21 @@ export const Sidebar = ({ className }: SidebarProps) => {
 	return (
 		<div
 			data-testid="sidebar"
-			className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+			className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [className])}
 		>
 			<Button
 				data-testid="sidebar-button"
 				onClick={onToggle}
+				className={styles.collapsedBtn}
+				size={ButtonSize.L}
+				theme={ButtonTheme.CLEAR}
+				square
 			>
-				{t('Переключить')}
+				{collapsed ? '>' : '<'}
 			</Button>
-			<div className={cls.switchers}>
-				<ThemeSwitcher />
-				<LangSwitcher className={cls.lang} />
+			<div className={styles.switchers}>
+				<ThemeSwitcher className={styles.themeIcon} />
+				<LangSwitcher className={styles.lang} short={collapsed} />
 			</div>
 		</div>
 	);
