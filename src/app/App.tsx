@@ -1,4 +1,5 @@
-import './styles/index.scss';
+/* eslint-disable i18next/no-literal-string */
+/* eslint-disable react/button-has-type */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/route';
