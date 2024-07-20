@@ -7,9 +7,6 @@
   opacity: 0;
   z-index: -1;
   pointer-events: none;
-
-  // Убрать
-  color: var(--primary-color);
 }
 
 .overlay {
@@ -27,8 +24,9 @@
   border-radius: 0.5rem;
   background-color: var(--bg-color);
   border: 2px solid var(--bg-color-secondary);
-  transition: 0.1s transform;
-  transform: scale(0.5);
+  transition: 0.1s transform, 0.1s opacity;
+  transform: scale(0.7);
+  opacity: 0.5;
 }
 
 .opened {
@@ -38,17 +36,13 @@
 
   .content {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
 .isClosing {
   .content {
-    transform: scale(0.3);
+    transform: scale(0.7);
+    opacity: 0.5;
   }
-}
-
-// Убрать
-.Modal.dark {
-  --bg-color: #222;
-  --primary-color: #fff;
 }

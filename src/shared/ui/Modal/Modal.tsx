@@ -4,8 +4,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import React, {
 	ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
-// Убрать
-import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
@@ -16,19 +14,15 @@ interface ModalProps {
 	children?: ReactNode,
 }
 
-const ANIMATION_DELAY = 100;
+const ANIMATION_DELAY = 50;
 
 export const Modal = ({
 	className, children, isOpen, onClose,
 }: ModalProps) => {
 	const [isClosing, setIsClosing] = useState(false);
-	// Убрать
-	const { theme } = useTheme();
 	const mods: Record<string, boolean> = {
 		[styles.opened]: isOpen,
 		[styles.isClosing]: isClosing,
-		// Убрать
-		[styles[theme]]: true,
 	};
 
 	const timerRef = useRef<ReturnType<typeof setTimeout>>();
