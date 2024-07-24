@@ -1,6 +1,7 @@
 .LoginFormContainer {
   width: 500px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .LoginForm_title {
@@ -53,4 +54,8 @@
 
 .LoginForm_btn:hover {
   background-color: var(--bg-btn-login-hovered);
+}
+
+.LoginForm_errorTitle {
+  margin: 2.5rem 0;
 }

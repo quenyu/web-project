@@ -27,6 +27,7 @@ export const Button: FC<ButtonProps> = ({
 	className,
 	theme,
 	square,
+	disabled,
 	size = ButtonSize.M,
 	...otherProps
 }) => {
@@ -34,12 +35,14 @@ export const Button: FC<ButtonProps> = ({
 		[styles.square]: square,
 		[styles[theme]]: true,
 		[styles[size]]: true,
+		[styles.disabled]: disabled,
 	};
 
 	return (
 		<button
 			type="button"
 			className={classNames(styles.Button, mods, [className])}
+			disabled={disabled}
 			{...otherProps}
 		>
 			{children}
