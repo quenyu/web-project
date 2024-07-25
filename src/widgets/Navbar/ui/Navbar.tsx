@@ -57,10 +57,10 @@ export const Navbar = ({ className }: NavbarProps) => {
 	return (
 		<div className={classNames(styles.Navbar, {}, [className])}>
 			<div className={styles.links}>
-				<AppLink theme={AppLinkTheme.PRIMARY} to={RoutePath.main}>
+				<AppLink className={styles.Navbar_link} theme={AppLinkTheme.PRIMARY} to={RoutePath.main}>
 					{t('Главная')}
 				</AppLink>
-				<AppLink theme={AppLinkTheme.PRIMARY} to={RoutePath.about}>
+				<AppLink className={styles.Navbar_link} theme={AppLinkTheme.PRIMARY} to={RoutePath.about}>
 					{t('О сайте')}
 				</AppLink>
 				<Button
@@ -70,10 +70,12 @@ export const Navbar = ({ className }: NavbarProps) => {
 				>
 					{t('Войти')}
 				</Button>
-				<LoginModal
-					isOpen={isAuthModal}
-					onClose={onCloseModal}
-				/>
+				{isAuthModal && (
+					<LoginModal
+						isOpen={isAuthModal}
+						onClose={onCloseModal}
+					/>
+				)}
 			</div>
 		</div>
 	);
