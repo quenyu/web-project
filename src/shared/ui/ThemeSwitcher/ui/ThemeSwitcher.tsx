@@ -16,12 +16,5 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 			type="checkbox"
 			defaultChecked
 		/>
-		// <Button
-		// 	className={classNames('', {}, [className])}
-		// 	onClick={toggleTheme}
-		// 	theme={ButtonTheme.CLEAR}
-		// >
-		// {/* </Button> */}
-		// {/* {theme === Themes.DARK ? <DarkThemeIcon className={styles.darkIcon} width={30} height={30} /> : <LightThemeIcon width={30} height={30} />} */}
 	);
 };

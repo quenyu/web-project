@@ -37,6 +37,9 @@ export default {
 		'\\.s?css$': 'identity-obj-proxy',
 		'\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
 	},
+	transformIgnorePatterns: [
+		'/node_modules/(?!axios).+\\.js$',
+	],
 	// Indicates whether the coverage information should be collected while executing the test
 	// collectCoverage: false,
 

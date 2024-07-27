@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
@@ -57,14 +57,8 @@ export const Navbar = ({ className }: NavbarProps) => {
 	return (
 		<div className={classNames(styles.Navbar, {}, [className])}>
 			<div className={styles.links}>
-				<AppLink className={styles.Navbar_link} theme={AppLinkTheme.PRIMARY} to={RoutePath.main}>
-					{t('Главная')}
-				</AppLink>
-				<AppLink className={styles.Navbar_link} theme={AppLinkTheme.PRIMARY} to={RoutePath.about}>
-					{t('О сайте')}
-				</AppLink>
 				<Button
-					theme={ButtonTheme.OUTLINE}
+					theme={ButtonTheme.CLEAR}
 					className={styles.link}
 					onClick={onShowModal}
 				>

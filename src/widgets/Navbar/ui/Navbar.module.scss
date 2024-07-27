@@ -1,5 +1,6 @@
 .Navbar {
-  font: var(--font-m);
+  font-size: 18px;
+  font-weight: 600;
   height: var(--navbar-height);
   width: 100%;
   display: flex;
@@ -24,12 +25,15 @@
   font-size: 18px;
   padding: 0.5rem 0.75rem;
   color: var(--primary-color);
-  border: 2px solid var(--default-color);
-  background-color: transparent;
+
+  // border: 2px solid var(--default-color);
+  // background-color: transparent;
+  background-color: var(--bg-btn-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
 .link:hover {
-  background-color: var(--default-color);
-  color: var(--bg-color);
+  background-color: transparent;
+
+  // color: var(--bg-color);
 }
