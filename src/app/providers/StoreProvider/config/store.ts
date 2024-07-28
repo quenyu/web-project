@@ -28,3 +28,5 @@ export const newReduxStore = (
 
 	return store;
 };
+
+export type AppDispatch = ReturnType<typeof newReduxStore>['dispatch']

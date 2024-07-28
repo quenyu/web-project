@@ -1,8 +1,9 @@
 /* eslint-disable i18next/no-literal-string */
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import kyubei from 'shared/assets/gif/kyubei.gif';
 
-const Main = () => {
+const Main = memo(() => {
 	const { t } = useTranslation('main');
 
 	return (
@@ -11,6 +12,6 @@ const Main = () => {
 			<img src={kyubei} alt="kyubei" />
 		</div>
 	);
-};
+});
 
 export default Main;

@@ -1,0 +1,39 @@
+.sidebar_item {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--secondary-color);
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.sidebar_item:hover {
+  inset: 0;
+  border-radius: 8px;
+  color: var(--default-color);
+  background-color: var(--bg-color-destructive);
+}
+
+.sidebar_item_icon {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+.link {
+  opacity: 1;
+  transition: 0.2s opacity;
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+}

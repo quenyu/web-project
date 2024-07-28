@@ -1,9 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +11,7 @@ type NavbarProps = {
   className?: string,
 }
 
-export const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = memo(({ className }: NavbarProps) => {
 	const { t } = useTranslation();
 	const [isAuthModal, setIsAuthModal] = useState(false);
 	const dispatch = useDispatch();
@@ -36,14 +34,8 @@ export const Navbar = ({ className }: NavbarProps) => {
 			<div className={classNames(styles.Navbar, {}, [className])}>
 
 				<div className={styles.links}>
-					<AppLink theme={AppLinkTheme.PRIMARY} to={RoutePath.main}>
-						{t('Главная')}
-					</AppLink>
-					<AppLink theme={AppLinkTheme.PRIMARY} to={RoutePath.about}>
-						{t('О сайте')}
-					</AppLink>
 					<Button
-						theme={ButtonTheme.OUTLINE}
+						theme={ButtonTheme.CLEAR}
 						className={styles.link}
 						onClick={onLogout}
 					>
@@ -73,4 +65,4 @@ export const Navbar = ({ className }: NavbarProps) => {
 			</div>
 		</div>
 	);
-};
+});
