@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
+	MutableRefObject,
 	ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import styles from './Modal.module.scss';
@@ -25,13 +26,13 @@ export const Modal = ({
 	lazy,
 }: ModalProps) => {
 	const [isClosing, setIsClosing] = useState(false);
-	const mods: Record<string, boolean> = {
+	const mods: Mods = {
 		[styles.opened]: isOpen,
 		[styles.isClosing]: isClosing,
 	};
 	const [isMounted, setIsMounted] = useState(false);
 
-	const timerRef = useRef<ReturnType<typeof setTimeout>>();
+	const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
 	useEffect(() => {
 		if (isOpen) {

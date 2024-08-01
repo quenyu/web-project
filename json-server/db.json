@@ -26,6 +26,13 @@
     }
   ],
   "profile": {
-    "name": "typicode"
+    "firstName": "A",
+    "lastName": "B",
+    "age": 1,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "city",
+    "username": "admin",
+    "avatar": "null"
   }
 }

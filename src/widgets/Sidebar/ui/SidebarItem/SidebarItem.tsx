@@ -20,8 +20,8 @@ export const SidebarItem = memo(({
 			theme={AppLinkTheme.PRIMARY}
 			to={path}
 		>
-			<span className={styles.sidebar_item_icon}>
-				<Icon />
+			<span className={styles.sidebar_icon_wrapper}>
+				<Icon className={styles.sidebar_item_icon} />
 			</span>
 			<span className={styles.link}>{t(text)}</span>
 		</AppLink>

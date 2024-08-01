@@ -17,12 +17,23 @@
   border-radius: 8px;
   color: var(--default-color);
   background-color: var(--bg-color-destructive);
+
+  .sidebar_item_icon {
+    fill: #da69fa;
+    -webkit-box-shadow: 4px 4px 100px 16px rgba(207, 49, 250, 0.2);
+    -moz-box-shadow: 4px 4px 100px 16px rgba(207, 49, 250, 0.2);
+    box-shadow: 4px 4px 100px 16px rgba(207, 49, 250, 0.2);
+  }
 }
 
-.sidebar_item_icon {
+.sidebar_icon_wrapper {
   display: flex;
   align-items: center;
   opacity: 1;
+}
+
+.sidebar_item_icon {
+  transition: all 0.4s ease;
 }
 
 .link {

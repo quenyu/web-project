@@ -9,7 +9,7 @@ export type UseThemeResult = {
 export const useTheme = (): UseThemeResult => {
 	const { theme, setTheme } = useContext(ThemeContext);
 
-	document.body.className = theme;
+	document.body.className = theme || '';
 
 	const toggleTheme = () => {
 		let newTheme;
@@ -29,7 +29,7 @@ export const useTheme = (): UseThemeResult => {
 	};
 
 	return {
-		theme,
+		theme: theme || Themes.DARK,
 		toggleTheme,
 	};
 };

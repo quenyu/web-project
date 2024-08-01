@@ -9,7 +9,6 @@
 
 .LoginForm_title {
   text-align: center;
-  margin-bottom: 24px;
   font: var(--font-xl);
   font-size: 2.5rem;
   font-weight: 600;
@@ -30,6 +29,13 @@
   font: var(--font-m);
   font-size: 18px;
   background-color: var(--bg-color-secondary);
+}
+
+.LoginForm_input:focus {
+  -webkit-box-shadow: 0px 0px 71px 12px #6f54a133;
+  -moz-box-shadow: 0px 0px 71px 12px #6f54a133;
+  box-shadow: 0px 0px 71px 12px #6f54a133;
+  outline: 2px solid var(--secondary-color);
 }
 
 .LoginForm_subtitle {
@@ -60,5 +66,5 @@
 }
 
 .LoginForm_errorTitle {
-  margin: 2.5rem 0;
+  margin: 1rem 0;
 }

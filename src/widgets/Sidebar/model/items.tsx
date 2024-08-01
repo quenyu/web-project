@@ -7,7 +7,7 @@ import {
 export interface SidebarItemType extends IconBaseProps {
   path: string,
   text: string,
-  Icon: IconType,
+  Icon: IconType | string,
 }
 
 export const SidebarItemList: SidebarItemType[] = [

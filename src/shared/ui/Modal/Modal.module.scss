@@ -7,6 +7,7 @@
   opacity: 0;
   z-index: -1;
   pointer-events: none;
+  transition: opacity 0.3s ease, z-index 0s 0.3s;
 }
 
 .overlay {
@@ -25,7 +26,10 @@
   background-color: var(--bg-auth-color);
   transform: scale(0.7);
   opacity: 0.5;
-  transition: 0.1s transform, 0.1s opacity;
+  -webkit-box-shadow: 4px 4px 100px 65px var(--bg-auth-shadow);
+  -moz-box-shadow: 4px 4px 100px 65px var(--bg-auth-shadow);
+  box-shadow: 4px 4px 100px 65px var(--bg-auth-shadow);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .opened {
