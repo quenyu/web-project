@@ -32,9 +32,7 @@
 }
 
 .LoginForm_input:focus {
-  -webkit-box-shadow: 0px 0px 71px 12px #6f54a133;
-  -moz-box-shadow: 0px 0px 71px 12px #6f54a133;
-  box-shadow: 0px 0px 71px 12px #6f54a133;
+  box-shadow: 0 0 71px 12px #6f54a133;
   outline: 2px solid var(--secondary-color);
 }
 

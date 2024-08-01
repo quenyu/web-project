@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import kyubei from 'shared/assets/gif/kyubei.gif';
+// import kyubei from 'shared/assets/gif/kyubei.gif';
 
 const Main = memo(() => {
 	const { t } = useTranslation('main');
@@ -9,7 +9,7 @@ const Main = memo(() => {
 	return (
 		<div>
 			{t('Главная страница')}
-			<img src={kyubei} alt="kyubei" />
+			{/* <img src={kyubei} alt="kyubei" /> */}
 		</div>
 	);
 });
