@@ -8,6 +8,7 @@ export interface SidebarItemType extends IconBaseProps {
   path: string,
   text: string,
   Icon: IconType | string,
+  authOnly?: boolean,
 }
 
 export const SidebarItemList: SidebarItemType[] = [
@@ -25,5 +26,6 @@ export const SidebarItemList: SidebarItemType[] = [
 		path: RoutePath.profile,
 		text: 'Профиль',
 		Icon: ProfileIcon,
+		authOnly: true,
 	},
 ];

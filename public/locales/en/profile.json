@@ -1,3 +1,17 @@
 {
-  "Профиль": "Profile"
+  "Профиль": "Profile",
+  "Произошла ошибка при загрузке профиля": "There was an error loading your profile",
+  "Попробуйте обновить страницу": "Try refreshing the page",
+  "Редактировать": "Edit",
+  "Имя": "First name",
+  "Фамилия": "Last name",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Ник": "Username",
+  "Возраст": "Age",
+  "Страна": "Country",
+  "Город": "City",
+  "Фотография": "User picture",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Specify country"
 }

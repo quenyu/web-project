@@ -1,9 +1,3 @@
-export enum Currency {
-  RUB = 'RUB',
-  EUR = 'EUR',
-  USD = 'USD',
-}
-
 export enum Country {
   JAPAN = 'Japan',
   USA = 'United States of America',

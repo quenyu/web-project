@@ -1,0 +1,46 @@
+.Wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Label {
+  font: var(--font-m);
+  font-size: 18px;
+  font-weight: 500;
+  min-width: 140px;
+  margin-right: 1rem;
+}
+
+.Option {
+  appearance: auto;
+  font: var(--font-m);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px;
+  border: 2px solid transparent;
+  background-color: var(--bg-color-secondary);
+}
+
+.Select {
+  flex-grow: 1;
+  max-width: 600px;
+  color: var(--primary-color);
+  padding: 8px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font: var(--font-m);
+  font-weight: 500;
+  background-color: var(--bg-color-secondary);
+  outline: none;
+  appearance: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.Select:focus {
+  box-shadow: 0 0 10px 4px rgb(111 84 161 / 20%);
+  outline: none;
+  border-color: var(--secondary-color);
+  transform: scale(1.02);
+}

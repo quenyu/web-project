@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import styles from './Text.module.scss';
 
@@ -7,11 +7,18 @@ export enum TextTheme {
   ERROR = 'error',
 }
 
+export enum TextAlign {
+  CENTER = 'center',
+  LEFT = 'left',
+  RIGHT = 'right'
+}
+
 interface TextProps {
   className?: string,
   title?: string,
   text?: string,
-  theme?: TextTheme;
+  theme?: TextTheme,
+  align?: TextAlign,
 }
 
 export const Text = memo(({
@@ -19,9 +26,14 @@ export const Text = memo(({
 	text,
 	title,
 	theme = TextTheme.PRIMARY,
-}: TextProps) => (
-	<div className={classNames(styles.Text, { [styles[theme]]: true }, [className])}>
-		{title && <h2 className={styles.title}>{title}</h2>}
-		{text && <p className={styles.subtitle}>{text}</p>}
-	</div>
-));
+	align = TextAlign.LEFT,
+}: TextProps) => {
+	const mods: Mods = { [styles[theme]]: true, [styles[align]]: true };
+
+	return (
+		<div className={classNames(styles.Text, mods, [className])}>
+			{title && <h2 className={styles.title}>{title}</h2>}
+			{text && <p className={styles.subtitle}>{text}</p>}
+		</div>
+	);
+});

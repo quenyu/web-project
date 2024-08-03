@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "firstName": "A",
-    "lastName": "B",
-    "age": 1,
+    "firstName": "Alice",
+    "lastName": "Akimova",
+    "age": 18,
     "currency": "RUB",
     "country": "Russia",
     "city": "city",
-    "username": "admin",
-    "avatar": "null"
+    "username": "rita",
+    "avatar": "https://i.pinimg.com/564x/65/6a/fc/656afc7b229f65f0baf866e5d5569fa7.jpg"
   }
 }
