@@ -10,10 +10,16 @@
 
 .error {
   .title {
+    font: var(--font-m);
+    font-size: 20px;
+    font-weight: 700;
     color: var(--primary-color);
   }
 
   .subtitle {
+    font: var(--font-m);
+    font-size: 18px;
+    font-weight: 700;
     color: var(--secondary-color);
   }
 }
@@ -28,4 +34,14 @@
 
 .center {
   text-align: center;
+}
+
+.textAdditional {
+  font: var(--font-m);
+  font-weight: 700;
+}
+
+.titleAdditional {
+  font: var(--font-m);
+  font-weight: 700;
 }

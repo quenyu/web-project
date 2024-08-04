@@ -8,6 +8,7 @@ import path from 'path';
 export default {
 	globals: {
 		Dev: true,
+		Project: 'jest',
 	},
 	clearMocks: true,
 	testEnvironment: 'jsdom',

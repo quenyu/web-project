@@ -13,5 +13,11 @@
   "Город": "City",
   "Фотография": "User picture",
   "Укажите валюту": "Specify currency",
-  "Укажите страну": "Specify country"
+  "Укажите страну": "Specify country",
+  "Произошла ошибка сервера. Пожалуйста, попробуйте позже": "A server error has occurred. Please try again later",
+  "Отсутствуют данные. Проверьте введённую информацию": "Missing data. Check the information you entered",
+  "Указан некорректный возраст. Пожалуйста, введите действительный возраст": "Incorrect age. Please enter a valid age",
+  "Указана некорректная страна. Пожалуйста, проверьте правильность данных": "Incorrect country. Please check the data is correct",
+  "Некорректное имя пользователя или оно уже занято. Пожалуйста, выберите другое": "Incorrect username or it is already taken. Please choose another one",
+  "Некорректные данные пользователя. Пожалуйста, проверьте введённую информацию": "Incorrect user data. Please check the information you entered"
 }

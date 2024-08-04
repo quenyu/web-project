@@ -1,5 +1,5 @@
 import {
-	fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, profileActions, ProfileCard, profileReducer,
+	fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, profileActions, ProfileCard, profileReducer,
 } from 'entities/Profile';
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +9,10 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import styles from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
 	profile: profileReducer,
@@ -20,15 +23,27 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
-	const { t } = useTranslation('main');
+	const { t } = useTranslation('profile');
 	const dispatch = useAppDispatch();
 	const form = useSelector(getProfileForm);
 	const error = useSelector(getProfileError);
 	const isLoading = useSelector(getProfileIsLoading);
 	const readonly = useSelector(getProfileReadonly);
+	const validateErrors = useSelector(getProfileValidateErrors);
+
+	const validateProfileError = {
+		[ValidateProfileError.SERVER_ERROR]: t('Произошла ошибка сервера. Пожалуйста, попробуйте позже'),
+		[ValidateProfileError.NO_DATA]: t('Отсутствуют данные. Проверьте введённую информацию'),
+		[ValidateProfileError.INCORRECT_AGE]: t('Указан некорректный возраст. Пожалуйста, введите действительный возраст'),
+		[ValidateProfileError.INCORRECT_COUNTRY]: t('Указана некорректная страна. Пожалуйста, проверьте правильность данных'),
+		[ValidateProfileError.INCORRECT_USERNAME]: t('Некорректное имя пользователя или оно уже занято. Пожалуйста, выберите другое'),
+		[ValidateProfileError.INCORRECT_USER_DATA]: t('Некорректные данные пользователя. Пожалуйста, проверьте введённую информацию'),
+	};
 
 	useEffect(() => {
-		dispatch(fetchProfileData());
+		if (Project !== 'storybook') {
+			dispatch(fetchProfileData());
+		}
 	}, [dispatch]);
 
 	const onChangeFirstname = useCallback((value: string) => {
@@ -67,6 +82,18 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 		<DynamicModuleLoader reducers={reducers}>
 			<div className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
+				{validateErrors && (
+					<div className={styles.errorBlock}>
+						{validateErrors.map((err) => (
+							<Text
+								key={err}
+								theme={TextTheme.ERROR}
+								align={TextAlign.CENTER}
+								text={validateProfileError[err]}
+							/>
+						))}
+					</div>
+				)}
 				<ProfileCard
 					data={form}
 					isLoading={isLoading}

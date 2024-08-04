@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 declare module '*.scss' {
 
 	interface IClassNames {
@@ -19,6 +20,7 @@ declare module '*.svg' {
 }
 
 declare const Dev: boolean;
+declare const Project: 'storybook' | 'frontend' | 'jest';
 
 type DeepPartial<T> = T extends object ? {
   [P in keyof T]?: DeepPartial<T[P]>;

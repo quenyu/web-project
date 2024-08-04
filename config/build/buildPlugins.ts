@@ -6,7 +6,7 @@ import {
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, project }: BuildOptions): WebpackPluginInstance[] {
 	const plugins = [
 		new HtmlWebpackPlugin({
 			template: paths.html,
@@ -18,6 +18,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
 		}),
 		new DefinePlugin({
 			Dev: JSON.stringify(isDev),
+			Project: JSON.stringify(project),
 		}),
 	];
 

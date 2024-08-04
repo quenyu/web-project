@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-keys */
+/* eslint-disable no-bitwise */
 module.exports = {
 	env: {
 		browser: true,
@@ -59,10 +61,11 @@ module.exports = {
 		'no-param-reassign': 'off',
 		'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
 		'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
-    'no-undef': 'off'
+		'no-undef': 'off',
 	},
 	globals: {
 		Dev: true,
+		Project: true,
 	},
 	overrides: [
 		{

@@ -27,7 +27,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
 	config!.module!.rules.push(buildCssLoader(true));
 
 	config!.plugins!.push(new DefinePlugin({
-		Dev: true,
+		Dev: JSON.stringify(true),
+		Project: JSON.stringify('storybook'),
 	}));
 
 	return config;

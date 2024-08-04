@@ -14,7 +14,7 @@ export interface SidebarItemType extends IconBaseProps {
 export const SidebarItemList: SidebarItemType[] = [
 	{
 		path: RoutePath.main,
-		text: 'Главня',
+		text: 'Главная',
 		Icon: MainIcon,
 	},
 	{

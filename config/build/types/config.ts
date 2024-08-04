@@ -17,4 +17,5 @@ export type BuildOptions = {
   paths: BuildPaths,
   isDev: boolean,
   port: number,
+  project: 'storybook' | 'frontend' | 'jest',
 }
