@@ -1,4 +1,5 @@
 import { getUserAuthData } from './models/selectors/getUserAuthData/getUserAuthData';
+import { getUserMounted } from './models/selectors/getUserMounted/getUserMounted';
 import { userReducer, userActions } from './models/slice/userSlice';
 import { UserSchema, User } from './models/types/user';
 
@@ -8,4 +9,5 @@ export {
 	UserSchema,
 	User,
 	getUserAuthData,
+	getUserMounted,
 };

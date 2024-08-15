@@ -1,15 +1,14 @@
-/* eslint-disable i18next/no-literal-string */
-/* eslint-disable react/button-has-type */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/route';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserMounted, userActions } from 'entities/User';
 
 const App = () => {
 	const dispatch = useDispatch();
+	const mounted = useSelector(getUserMounted);
 
 	useEffect(() => {
 		dispatch(userActions.initAuthData());
@@ -21,7 +20,7 @@ const App = () => {
 				<Navbar />
 				<div className="content-page">
 					<Sidebar />
-					<AppRouter />
+					{mounted && <AppRouter />}
 				</div>
 			</Suspense>
 		</div>
