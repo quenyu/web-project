@@ -3,6 +3,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import {
 	FaHouse as MainIcon, FaCircleInfo as AboutIcon, FaCircleUser as ProfileIcon,
 } from 'react-icons/fa6';
+import { TbArticleFilled as ArticleIcon } from 'react-icons/tb';
 
 export interface SidebarItemType extends IconBaseProps {
   path: string,
@@ -26,6 +27,12 @@ export const SidebarItemList: SidebarItemType[] = [
 		path: RoutePath.profile,
 		text: 'Профиль',
 		Icon: ProfileIcon,
+		authOnly: true,
+	},
+	{
+		path: RoutePath.articles,
+		text: 'Статьи',
+		Icon: ArticleIcon,
 		authOnly: true,
 	},
 ];
