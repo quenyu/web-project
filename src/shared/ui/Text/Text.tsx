@@ -13,6 +13,11 @@ export enum TextAlign {
   RIGHT = 'right'
 }
 
+export enum TextSize {
+  M = 'size_m',
+  L = 'size_l',
+}
+
 export enum TextStyleVariant {
 	TEXT = 'textAdditional',
 	TITLE = 'titleAdditional',
@@ -24,6 +29,7 @@ interface TextProps {
   text?: string,
   theme?: TextTheme,
   align?: TextAlign,
+  size?: TextSize,
   textStyle?: TextStyleVariant,
 }
 
@@ -34,8 +40,14 @@ export const Text = memo(({
 	textStyle = TextStyleVariant.TEXT,
 	theme = TextTheme.PRIMARY,
 	align = TextAlign.LEFT,
+	size = TextSize.M,
 }: TextProps) => {
-	const mods: Mods = { [styles[theme]]: true, [styles[align]]: true };
+	const mods: Mods = {
+		[styles[theme]]: true,
+		[styles[align]]: true,
+		[styles[size]]: true,
+		[styles[textStyle]]: true,
+	};
 
 	const modsText: Mods = { [styles[textStyle]]: true };
 	const modsTitle: Mods = { [styles[textStyle]]: true };

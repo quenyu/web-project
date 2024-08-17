@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Themes } from 'app/providers/ThemeProvider';
-import { Text } from './Text';
+import { Text, TextSize } from './Text';
 
 export default {
 	title: 'shared/Text',
@@ -26,8 +26,22 @@ OnlyTitle.args = {
 };
 
 export const OnlyText = Template.bind({});
-OnlyTitle.args = {
+OnlyText.args = {
 	text: 'Text',
+};
+
+export const NormalSize = Template.bind({});
+NormalSize.args = {
+	title: 'Title',
+	text: 'Text',
+	size: TextSize.M,
+};
+
+export const NormalSizeL = Template.bind({});
+NormalSizeL.args = {
+	title: 'Title',
+	text: 'Text',
+	size: TextSize.L,
 };
 
 export const Dark = Template.bind({});
@@ -46,5 +60,21 @@ Dark.decorators = [ThemeDecorator(Themes.DARK)];
 export const OnlyTextDark = Template.bind({});
 OnlyTextDark.args = {
 	text: 'Text',
+};
+Dark.decorators = [ThemeDecorator(Themes.DARK)];
+
+export const NormalSizeDark = Template.bind({});
+NormalSizeDark.args = {
+	title: 'Title',
+	text: 'Text',
+	size: TextSize.M,
+};
+Dark.decorators = [ThemeDecorator(Themes.DARK)];
+
+export const NormalSizeDarkL = Template.bind({});
+NormalSizeDarkL.args = {
+	title: 'Title',
+	text: 'Text',
+	size: TextSize.L,
 };
 Dark.decorators = [ThemeDecorator(Themes.DARK)];
