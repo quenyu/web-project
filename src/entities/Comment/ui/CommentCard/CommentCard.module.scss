@@ -1,0 +1,25 @@
+.CommentCard {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 2px solid var(--code-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.CommentCardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.CommentCardHeader .Avatar {
+  margin-right: 15px;
+}
+
+.CommentCardHeader .Username {
+  font-weight: bold;
+}
+
+.CommentCardText {
+  color: var(--default-color);
+}

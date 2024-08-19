@@ -11,6 +11,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { FaEye as IconEye, FaCalendarAlt as IconCalendar } from 'react-icons/fa';
 import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
 import { fetchArticlesByID } from '../../model/services/fetchArticlesByID/fetchArticlesByID';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -124,11 +125,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 		);
 	}
 
-	useEffect(() => {
-		if (Project !== 'storybook') {
-			dispatch(fetchArticlesByID(id));
-		}
-	}, [dispatch, id]);
+	useInitialEffect(() => dispatch(fetchArticlesByID(id)));
 
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
