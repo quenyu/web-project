@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +102,30 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "asdasasasda",
+      "id": "LAouPZq"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "fsdfs",
+      "id": "b9DI0FV"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "exexe",
+      "id": "jtLtwiE"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "exexe",
+      "id": "rMD23cY"
     }
   ],
   "users": [
@@ -115,17 +141,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://i.pinimg.com/564x/65/6a/fc/656afc7b229f65f0baf866e5d5569fa7.jpg"
+      "avatar": "https://i.pinimg.com/564x/cf/b8/83/cfb88324061790a7ed0f71ff7e6d234c.jpg"
     }
   ],
-  "profile": {
-    "firstName": "Alice",
-    "lastName": "Akimova",
-    "age": 18,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "city",
-    "username": "rita",
-    "avatar": "https://i.pinimg.com/564x/65/6a/fc/656afc7b229f65f0baf866e5d5569fa7.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstName": "Alice",
+      "lastName": "Akimova",
+      "age": 18,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "city",
+      "username": "rita",
+      "avatar": "https://i.pinimg.com/564x/cf/b8/83/cfb88324061790a7ed0f71ff7e6d234c.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "Alice",
+      "lastName": "Akimova",
+      "age": 17,
+      "currency": "RUB",
+      "country": "Japan",
+      "city": "city",
+      "username": "alice",
+      "avatar": "https://i.pinimg.com/564x/cf/b8/83/cfb88324061790a7ed0f71ff7e6d234c.jpg"
+    }
+  ]
 }

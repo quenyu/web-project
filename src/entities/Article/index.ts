@@ -5,6 +5,7 @@ import { articleDetailsActions, articleDetailsReducer } from './model/slice/arti
 import { ArticleTextBlockComponent } from './ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from './ui/ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleCodeBlockComponent } from './ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { getArticleDetailsData } from './model/selectors/articleDetails';
 
 export {
 	ArticleDetails,
@@ -15,4 +16,5 @@ export {
 	ArticleTextBlockComponent,
 	ArticleImageBlockComponent,
 	ArticleCodeBlockComponent,
+	getArticleDetailsData,
 };

@@ -1,0 +1,34 @@
+.AddNewComment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 90px;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--bg-auth-shadow);
+
+  .Input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    min-width: 90px;
+
+    &:focus {
+      box-shadow: 0 0 71px 12px #6f54a133;
+      outline: 2px solid var(--secondary-color);
+    }
+  }
+
+  .Button {
+    color: white;
+    background-color: var(--bg-btn-login);
+    padding: 0.5rem 1.25rem;
+    font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      background-color: var(--bg-btn-login-hovered);
+    }
+  }
+}

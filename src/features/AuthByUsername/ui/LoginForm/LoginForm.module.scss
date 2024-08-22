@@ -29,11 +29,11 @@
   font: var(--font-m);
   font-size: 18px;
   background-color: var(--bg-color-secondary);
-}
 
-.LoginForm_input:focus {
-  box-shadow: 0 0 71px 12px #6f54a133;
-  outline: 2px solid var(--secondary-color);
+  &:focus {
+    box-shadow: 0 0 71px 12px #6f54a133;
+    outline: 2px solid var(--secondary-color);
+  }
 }
 
 .LoginForm_subtitle {
@@ -54,13 +54,12 @@
   color: #fff;
   padding: 10px;
   background-color: var(--bg-btn-login);
-  cursor: pointer;
   font-size: 18px;
   transition: background-color 0.2s ease-in-out;
-}
 
-.LoginForm_btn:hover {
-  background-color: var(--bg-btn-login-hovered);
+  &:hover {
+    background-color: var(--bg-btn-login-hovered);
+  }
 }
 
 .LoginForm_errorTitle {

@@ -27,20 +27,21 @@
 }
 
 .ProfilePageHeaderBtn:hover {
+  opacity: 1;
   background-color: var(--bg-btn-color);
   border-width: 0;
   border-color: transparent;
 }
 
 .ProfilePageHeaderBtnCncl:hover {
-  // background-color: var(--bg-btn-color);
+  opacity: 1;
   background-color: #ae1a1ae6;
   border-width: 0;
   border-color: transparent;
 }
 
 .ProfilePageHeaderBtnSv:hover {
-  // background-color: var(--bg-btn-color);
+  opacity: 1;
   background-color: #49d526d5;
   border-width: 0;
   border-color: transparent;

@@ -3,8 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+	getProfileData, getProfileReadonly, profileActions, updateProfileData,
+} from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getUserAuthData } from 'entities/User';
 import styles from './ProfilePageHeader.module.scss';
 
 interface ProfilePageHeaderProps {
@@ -15,6 +18,10 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
 	const { t } = useTranslation('profile');
 	const dispatch = useAppDispatch();
 	const readonly = useSelector(getProfileReadonly);
+	const authData = useSelector(getUserAuthData);
+	const profileData = useSelector(getProfileData);
+
+	const canEdit = authData?.id === profileData?.id;
 
 	const onEdit = useCallback(() => {
 		dispatch(profileActions.setReadonly(false));
@@ -33,36 +40,38 @@ export const ProfilePageHeader = memo(({ className }: ProfilePageHeaderProps) =>
 			<h1 className={styles.ProfilePageHeaderTitle}>
 				{t('Профиль')}
 			</h1>
-			{readonly ? (
-				<Button
-					theme={ButtonTheme.OUTLINE}
-					size={ButtonSize.L}
-					className={styles.ProfilePageHeaderBtn}
-					onClick={onEdit}
-				>
-					{t('Редактировать')}
-				</Button>
-			)
-				: (
-					<div className={styles.ProfilePageHeaderBtnGroup}>
-						<Button
-							theme={ButtonTheme.OUTLINE}
-							size={ButtonSize.L}
-							className={styles.ProfilePageHeaderBtnCncl}
-							onClick={onCancelEdit}
-						>
-							{t('Отменить')}
-						</Button>
-						<Button
-							theme={ButtonTheme.OUTLINE}
-							size={ButtonSize.L}
-							className={styles.ProfilePageHeaderBtnSv}
-							onClick={onSaveEdit}
-						>
-							{t('Сохранить')}
-						</Button>
-					</div>
-				)}
+			{canEdit && (
+				readonly ? (
+					<Button
+						theme={ButtonTheme.OUTLINE}
+						size={ButtonSize.L}
+						className={styles.ProfilePageHeaderBtn}
+						onClick={onEdit}
+					>
+						{t('Редактировать')}
+					</Button>
+				)
+					: (
+						<div className={styles.ProfilePageHeaderBtnGroup}>
+							<Button
+								theme={ButtonTheme.OUTLINE}
+								size={ButtonSize.L}
+								className={styles.ProfilePageHeaderBtnCncl}
+								onClick={onCancelEdit}
+							>
+								{t('Отменить')}
+							</Button>
+							<Button
+								theme={ButtonTheme.OUTLINE}
+								size={ButtonSize.L}
+								className={styles.ProfilePageHeaderBtnSv}
+								onClick={onSaveEdit}
+							>
+								{t('Сохранить')}
+							</Button>
+						</div>
+					)
+			)}
 		</div>
 	);
 });

@@ -32,7 +32,7 @@ export const Input = memo(({
 
 	return (
 		<input
-			className={classNames('', mods, [className])}
+			className={classNames(styles.Input, mods, [className])}
 			type={type}
 			value={value}
 			onChange={onChangeHandler}

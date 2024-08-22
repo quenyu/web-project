@@ -11,6 +11,8 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import styles from './ProfilePage.module.scss';
 
@@ -30,6 +32,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 	const isLoading = useSelector(getProfileIsLoading);
 	const readonly = useSelector(getProfileReadonly);
 	const validateErrors = useSelector(getProfileValidateErrors);
+	const { id } = useParams();
 
 	const validateProfileError = {
 		[ValidateProfileError.SERVER_ERROR]: t('Произошла ошибка сервера. Пожалуйста, попробуйте позже'),
@@ -40,11 +43,11 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 		[ValidateProfileError.INCORRECT_USER_DATA]: t('Некорректные данные пользователя. Пожалуйста, проверьте введённую информацию'),
 	};
 
-	useEffect(() => {
-		if (Project !== 'storybook') {
-			dispatch(fetchProfileData());
+	useInitialEffect(() => {
+		if (id) {
+			dispatch(fetchProfileData(String(id)));
 		}
-	}, [dispatch]);
+	});
 
 	const onChangeFirstname = useCallback((value: string) => {
 		dispatch(profileActions.updateProfile({ firstName: value }));
