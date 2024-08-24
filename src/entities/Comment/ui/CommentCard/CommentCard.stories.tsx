@@ -16,7 +16,11 @@ Primary.args = {
 	comment: {
 		id: '1',
 		text: 'hello world',
-		user: { id: '1', username: 'Vasya' },
+		user: {
+			id: '1',
+			username: 'Vasya',
+			avatar: '',
+		},
 	},
 };
 
@@ -25,7 +29,11 @@ Loading.args = {
 	comment: {
 		id: '1',
 		text: 'hello world',
-		user: { id: '1', username: 'Vasya' },
+		user: {
+			id: '1',
+			username: 'Vasya',
+			avatar: '',
+		},
 	},
 	isLoading: true,
 };
@@ -35,7 +43,11 @@ Dark.args = {
 	comment: {
 		id: '1',
 		text: 'hello world',
-		user: { id: '1', username: 'Vasya' },
+		user: {
+			id: '1',
+			username: 'Vasya',
+			avatar: '',
+		},
 	},
 };
 
@@ -44,7 +56,11 @@ LoadingDark.args = {
 	comment: {
 		id: '1',
 		text: 'hello world',
-		user: { id: '1', username: 'Vasya' },
+		user: {
+			id: '1',
+			username: 'Vasya',
+			avatar: '',
+		},
 	},
 	isLoading: true,
 };

@@ -1,0 +1,15 @@
+.ArticleList {
+  margin-bottom: 20px;
+
+  &.GRID1LARGE {
+    margin-bottom: 30px;
+  }
+
+  &.GRID4SMALL {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    justify-content: center;
+  }
+}

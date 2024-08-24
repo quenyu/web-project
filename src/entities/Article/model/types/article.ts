@@ -1,7 +1,14 @@
+import { User } from 'entities/User';
+
+export enum ArticleView {
+  GRID4SMALL = 'GRID4SMALL',
+  GRID1LARGE = 'GRID1LARGE',
+}
+
 export enum ArticleBlockType {
   CODE = 'CODE',
   IMAGE = 'IMAGE',
-  TEXT = 'TEXt',
+  TEXT = 'TEXT',
 }
 
 export interface ArticleBlockBase {
@@ -37,6 +44,7 @@ export enum ArticleType {
 export interface Article {
   id: string,
   title: string,
+  user: User,
   subtitle: string,
   img: string,
   views: number,

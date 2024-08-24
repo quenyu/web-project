@@ -1,13 +1,20 @@
 /* eslint-disable max-len */
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import styles from './ArticlesPage.module.scss';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-interface ArticlesPageProps {
-  className?: string,
-}
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Themes } from 'app/providers/ThemeProvider';
+import { Article, ArticleView } from 'entities/Article/model/types/article';
+import { ArticleListItem } from './ArticleListItem';
+
+export default {
+	title: 'entities/ArticleListItem',
+	component: ArticleListItem,
+	argTypes: {
+		backgroundColor: { control: 'color' },
+	},
+} as ComponentMeta<typeof ArticleListItem>;
+
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 const article = {
 	id: '1',
@@ -92,22 +99,28 @@ const article = {
 	],
 } as Article;
 
-const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
-	const { t } = useTranslation('article');
+export const NormalSmall = Template.bind({});
+NormalSmall.args = {
+	article,
+	view: ArticleView.GRID4SMALL,
+};
 
-	return (
-		<div className={classNames(styles.ArticlesPage, {}, [className])}>
-			{t('Страница статей')}
-			<ArticleList
-				isLoading
-				articles={new Array(16).fill(0).map((_, index) => ({
-					...article,
-					id: String(index),
-				}))}
-				view={ArticleView.GRID1LARGE}
-			/>
-		</div>
-	);
-});
+export const NormalBig = Template.bind({});
+NormalBig.args = {
+	article,
+	view: ArticleView.GRID1LARGE,
+};
 
-export default ArticlesPage;
+export const DarkSmall = Template.bind({});
+DarkSmall.args = {
+	article,
+	view: ArticleView.GRID4SMALL,
+};
+DarkSmall.decorators = [ThemeDecorator(Themes.DARK)];
+
+export const DarkBig = Template.bind({});
+DarkBig.args = {
+	article,
+	view: ArticleView.GRID1LARGE,
+};
+DarkBig.decorators = [ThemeDecorator(Themes.DARK)];
