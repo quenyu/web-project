@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage/localstorage';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 const baseURL = Dev ? 'http://localhost:8000' : '';
 

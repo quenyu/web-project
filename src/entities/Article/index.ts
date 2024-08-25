@@ -7,11 +7,13 @@ import { ArticleImageBlockComponent } from './ui/ArticleImageBlockComponent/Arti
 import { ArticleCodeBlockComponent } from './ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { getArticleDetailsData } from './model/selectors/articleDetails';
 import { ArticleList } from './ui/ArticleList/ArticleList';
+import { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export {
 	ArticleDetails,
 	Article,
 	ArticleView,
+	ArticleViewSelector,
 	ArticleDetailsSchema,
 	articleDetailsActions,
 	articleDetailsReducer,
