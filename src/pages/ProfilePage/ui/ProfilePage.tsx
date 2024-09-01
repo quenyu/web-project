@@ -13,6 +13,7 @@ import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import styles from './ProfilePage.module.scss';
 
@@ -83,7 +84,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames('', {}, [className])}>
+			<Page className={classNames('', {}, [className])}>
 				<ProfilePageHeader />
 				{validateErrors && (
 					<div className={styles.errorBlock}>
@@ -111,7 +112,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 					onChangeAvatar={onChangeAvatar}
 					onChangeCurrency={onChangeCurrency}
 				/>
-			</div>
+			</Page>
 		</DynamicModuleLoader>
 	);
 });

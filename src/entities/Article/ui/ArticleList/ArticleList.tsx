@@ -23,13 +23,13 @@ export const ArticleList = memo(({
 	isLoading,
 	view = ArticleView.GRID4SMALL,
 }: ArticleListProps) => {
-	if (isLoading) {
-		return (
-			<div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-				{getSkeletons(view)}
-			</div>
-		);
-	}
+	// if (isLoading) {
+	// 	return (
+	// 		<div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
+	// 			{getSkeletons(view)}
+	// 		</div>
+	// 	);
+	// }
 
 	const renderArticle = (article: Article) => <ArticleListItem key={article.id} article={article} view={view} />;
 
@@ -38,6 +38,7 @@ export const ArticleList = memo(({
 			{articles.length > 0
 				? articles.map(renderArticle)
 				: null}
+			{isLoading && getSkeletons(view)}
 		</div>
 	);
 });

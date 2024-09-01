@@ -1,0 +1,8 @@
+.Page {
+  flex-grow: 1;
+  flex-shrink: 100;
+  overflow-y: auto;
+  padding: 20px;
+  height: calc(95vh - var(--navbar-height));
+  font: var(--font-xl);
+}
