@@ -8,11 +8,11 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
-import { fetchNextPageArticles } from 'pages/ArticlesPage/model/services/fetchNextPageArticles/fetchNextPageArticles';
+import { fetchNextPageArticles } from '../../model/services/fetchNextPageArticles/fetchNextPageArticles';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
-	getArticlesPageError, getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPagePage, getArticlesPageView,
+	getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlesPageAction, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import styles from './ArticlesPage.module.scss';
 
@@ -120,10 +120,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	const error = useSelector(getArticlesPageError);
 
 	useInitialEffect(() => {
-		dispatch(articlesPageAction.initState());
-		dispatch(fetchArticlesList({
-			page: 1,
-		}));
+		dispatch(initArticlesPage());
 	});
 
 	const onLoadNextArticles = useCallback(() => {
@@ -135,7 +132,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
 	}, [dispatch]);
 
 	return (
-		<DynamicModuleLoader reducers={reducers}>
+		<DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
 			<Page
 				onScrollEnd={onLoadNextArticles}
 				className={classNames(styles.ArticlesPage, {}, [className])}
